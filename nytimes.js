@@ -22,16 +22,17 @@ function searchArticles(search,limit,begin_year,end_year){
         console.log("# of articles: " + articles.length);
         $.each(articles,function(index,element){
             console.log(index + " : " + element.headline.main);
+            var d = $("<div class='card col-sm-5'>");
             var div = $("<div class='card-block'>");
             var href = $("<a class='btn btn-primary'>");
             var h = $("<h4 class='card-title'>").append(element.headline.main);
-  
+            href.text("Read More");
             href.attr("href",element.web_url);
             href.append(h);            
             var b = $("<p>").append(element.byline.original);
             div.append(h).append(b).append(href);
-    
-            $("#results").append(div);
+            d.append(div);
+            $("#results").append(d);
         });
     }).fail(function(err) {
         throw err;
