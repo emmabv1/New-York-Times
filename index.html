@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Prata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>NY Times Article</title>
+
+    <style>
+        .box {
+            box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+            padding: 3rem;
+        }
+        
+        .jumbotron {
+            background-color: 3b5998;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Prata', serif;
+        }
+        
+        h1 {
+            font-size: 5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        body {
+            padding-bottom: 2rem;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .card {
+            margin-right: .5rem;
+            background-color: #f8f9fa!important;
+            width: 100%;
+            padding: 2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+        }
+        
+        #results {
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron text-light bg-dark">
+        <div class="container">
+            <h1 class="text-center">NY Times Articles</h1>
+
+            <form class="row justify-content-sm-center">
+
+                <div class="form-group col-sm-6">
+                    <label for="searchTerm">Search Term:</label>
+                    <input type="text" class="form-control" id="searchTerm">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="recordsNum">Number of records to retrieve</label>
+                    <select class="custom-select mr-sm-2" id="recordsNum">
+                      <option selected>10</option>
+                      <option value="1">15</option>
+                      <option value="2">20</option>
+                      <option value="3">25</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="searchTerm">Start Year (Optional):</label>
+                    <input type="text" class="form-control" id="startYear">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="searchTerm">End Year (Optional):</label>
+                    <input type="text" class="form-control" id="endYear">
+                </div>
+                <div class="col-sm-12"><button type="submit" class="btn btn-primary">Submit</button></div>
+
+            </form>
+        </div>
+
+    </div>
+    <main class="container">
+        <section id="results" class="row justify-content-sm-center">
+            <div class="card col-sm-5">
+
+                <div class="card-block">
+                    <h4 class="card-title">Card title</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card col-sm-5">
+
+                <div class="card-block">
+                    <h4 class="card-title">Card title</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+        </section>
+
+        <article id="article" class="box">
+
+            <h2 id="article-title">Article Title</h2>
+            <div id="article-body">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem eos consectetur, nostrum cupiditate ducimus praesentium. Necessitatibus laudantium repudiandae expedita nam est fugiat voluptate? Quam magni totam eius perferendis voluptates consectetur!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis provident voluptas beatae saepe commodi vitae animi fugit et aspernatur vel, omnis officia fuga sint dolore. Placeat neque porro expedita qui?
+            </div>
+
+        </article>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="nytimes.js"></script>
+</body>
+
+</html>
