@@ -21,34 +21,34 @@ function searchArticles(search,limit,begin_year,end_year){
         var articles = result.response.docs;
         console.log("# of articles: " + articles.length);
         $.each(articles,function(index,element){
-            var div = $("<div>");
-            var href = $("<a>");
-            var h = $("<h3>").append(element.headline.main);
+            console.log(index + " : " + element.headline.main);
+            var div = $("<div class='card-block'>");
+            var href = $("<a class='btn btn-primary'>");
+            var h = $("<h4 class='card-title'>").append(element.headline.main);
   
             href.attr("href",element.web_url);
             href.append(h);            
             var b = $("<p>").append(element.byline.original);
-            div.append(href).append(b);
+            div.append(h).append(b).append(href);
     
-            $("#articles").append(div);
+            $("#results").append(div);
         });
     }).fail(function(err) {
         throw err;
     });
 }
 
-//searchArticles(search,limit,begin_year,end_year);
-
-$("#search").on("click",function(){
-    /*search = $("#searchTerm").val();
+$("button").on("click",function(){
+    search = $("#searchTerm").val();
     limit = $("#recordsNum").val();
     begin_year = $("#startYear").val();
-    end_year = $("#endYear").val();*/
+    end_year = $("#endYear").val();
 
-    var search = "obama";
-    var limit = 5;
-    var begin_year = "2017";
-    var end_year = "2018";
+
+    if(search === undefined){search = "obama"; }
+    if(limit === undefined){ limit = 10; }
+    if(begin_year === undefined){begin_year = 2017; }
+    if(end_year === undefined){end_year = 2018;}
 
     searchArticles(search,limit,begin_year,end_year);
 
